@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Learn</title>
+</head>
+<body>
+<p>
+    var name = {{ name }}
+</p>
+<p>
+    {% if user %}
+        Nick name : {{ user.nickname }}, Email : {{ user.email }}
+    {% endif %}
+</p>
+<p>
+    {% for num in num_list %}
+        Num : {{ num }}
+    {% endfor %}
+</p>
+</body>
+</html>
