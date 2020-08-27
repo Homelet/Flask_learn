@@ -66,6 +66,11 @@ def inherit_template():
     return render_template("extend_template.html")
 
 
+@index_page.route("example")
+def example_template():
+    return render_template("common/layout.html")
+
+
 app.register_blueprint(index_page, url_prefix="/")
 
 if __name__ == "__main__":

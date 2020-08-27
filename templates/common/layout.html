@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>The common layout</title>
+    <meta charset="utf-8">
+    <title>Homelet's Blog</title>
+    <meta name="author" content="HongChengWei">
+    <meta name="description" content="Homelet's Personal Blog Site ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='layout.css') }}">
+    <link rel="icon" type="image/x-icon" href=""/>
 </head>
+
 <body>
-This is a common template!
-{% block content %} {% endblock %}
+<!--header-->
+<div id="header">
+    <div class="title">Homelet's Blog</div>
+</div>
+<!--navi-->
+<div id="navi">
+    <ul class="sibling-fade">
+        <li class="gator"><a href="#header">Home</a></li>
+        <li class="gator"><a href="#header">Blogs</a></li>
+        <li class="gator"><a href="#header">My Projects</a></li>
+        <li class="gator"><a href="#header">About Me</a></li>
+    </ul>
+</div>
+<!--meta-->
+{% block metadata %}{% endblock %}
+<div id="main-container">
+    <!--left-->
+    <div class="left">
+        {% block left %}{% endblock %}
+        <!--Holder element for sticky-->
+        <div></div>
+    </div>
+    <!--right-->
+    <div class="right">
+        {% block right %}{% endblock %}
+        <!--Holder element for sticky-->
+        <div></div>
+    </div>
+    <!--main-->
+    <div class="main">
+        {% block main %}{% endblock %}
+    </div>
+</div>
+{% block other %}{% endblock %}
+<!--Footer-->
+<div id="footer">
+    <ul class="sibling-fade">
+        <li>Find me:</li>
+        <li><a href="mailto::homeletwei@gmail.com">Email</a></li>
+        <li><a href="https://github.com/HomeletW">Github</a></li>
+        <li><a href="https://www.linkedin.com/in/hongcheng-wei-678b53145/">linkedin</a></li>
+    </ul>
+    <div class="copyright">&copy;2020 HongChengWei all rights reserved</div>
+</div>
+<script type="text/javascript"
+        src="{{ url_for('static', filename='layout.js') }}"></script>
 </body>
 </html>
